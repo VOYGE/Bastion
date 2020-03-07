@@ -6,7 +6,7 @@ int main()
 	int num2;
 	int num3;
 	std::cout << "Zadaniye 1" << std::endl << std::endl;
-//1 Задание
+
    std::cout << "       " << std::endl
              << "   *   " << std::endl
              << "  * *  " << std::endl
@@ -48,8 +48,7 @@ int main()
    if(num1 == 3) {std::cout << "Iscomaya Velichina: " << num2/86400 << std::endl<< std::endl;}
 
    std::cout << "Zadaniye 12" << std::endl << std::endl;
-   //Вводятся два целых числа. Проверить делится ли первое на второе. 
-   //Вывести на экран сообщение об этом, а также остаток (если он есть) и частное (в любом случае).
+  
    std::cout << "1 Chislo: ";
    std::cin >>  num1;
    std::cout << "2 Chislo: ";
