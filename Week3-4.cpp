@@ -1,7 +1,15 @@
 #include <iostream>
 #include <math.h>
+#include <fstream>
+
+using namespace std;
+
 int main()
 {
+	std::fstream file; // создаем объект класса ifstream
+	file.open("Week3-4.txt",std::ios::out); // открываем файл
+	//file<<""<<std::endl;
+
 	//Задание 1. Вывести на экран Н строк из нулей, причем количество нулей в каждой строке равно номеру строки.
 	//Количество строк Н вводит пользователь (можно из файла).
 	int Zadanie1;
@@ -29,10 +37,16 @@ int main()
     float x = xs;  // начинаем считать с левого края интервала
     while (x < xf){
        if(fabs(x - 2) < eps)
+	   {
            std::cout << "\t"
                      << x
                      << "\t\t Divide on zero"
                      << std::endl;
+				file << "\t"
+			         << x
+			         << "\t\t Divide on zero"
+			         << std::endl;
+	   }
        else {
 		   f = -x*(3+2*x)*(3+2*x)+3*x+sin(2*x);
 
@@ -41,6 +55,11 @@ int main()
                      << "\t\t"
                      << f
                      << std::endl;
+				file << "\t"
+			         << x
+			         << "\t\t"
+					 << f
+			         << std::endl;
        }
        x += dx;
     }
@@ -59,10 +78,16 @@ int main()
     x = xs;  // начинаем считать с левого края интервала
     while (x < xf){
        if(fabs(x - 2) < eps)
+	   {
            std::cout << "\t"
                      << x
                      << "\t\t Divide on zero"
                      << std::endl;
+				file << "\t"
+			         << x
+			         << "\t\t Divide on zero"
+			         << std::endl;
+	   }
        else {
 		   f = sqrt(15+4/x)+13*x+sin(3*x+13);
 
@@ -71,19 +96,24 @@ int main()
                      << "\t\t"
                      << f
                      << std::endl;
+				file << "\t"
+			         << x
+			         << "\t\t"
+					 << f
+			         << std::endl;
        }
        x += dx;
     }
 	//Задание 4i. Дана функция y=f(x). Найти значение функции по x:
 	std::cout << "X";
 	std::cin>> x;
-	if (x>7) { std::cout<<"y = " << 2*(x*x)-3 << std::endl; }
-	else {std::cout<< "X !< 7" << std::endl;}
-	std::cout<<"y = " << 0 << std::endl;
+	if (x>7) { std::cout<<"y = " << 2*(x*x)-3 << std::endl; file<<"y = " << 2*(x*x)-3 << std::endl;}
+	else {std::cout<< "X !< 7" << std::endl;file<< "X !< 7" << std::endl;}
+	std::cout<<"y = " << 0 << std::endl; file<<"y = " << 0 << std::endl;
 	std::cout << "X";
 	std::cin>> x;
-	if (x<7) { std::cout<<"y = " << 2*abs(x)+3 << std::endl; }
-	else {std::cout<< "X !> 7" << std::endl;}
+	if (x<7) { std::cout<<"y = " << 2*abs(x)+3 << std::endl; file<<"y = " << 2*abs(x)+3 << std::endl; }
+	else {std::cout<< "X !> 7" << std::endl; file<< "X !> 7" << std::endl;}
 
 	//Задание 5. Вывести на экран ряд натуральных чисел от Н до М с шагом Ш. 
 	//Например, если Н 10, М 35, Ш 5, то вывод должен быть таким: 10 15 20 25 30 35. 
@@ -92,7 +122,7 @@ int main()
 	std::cout << "xmin, xmax, shag " << std::endl;
 	std::cin >> xmin >> xmax >> shag;
 	while (xmin<xmax) {
-		std::cout << xmin << " ";
+		std::cout << xmin << " "; file << xmin << " "; 
 		xmin+=shag;
 	}
 	std::cout << std::endl;
@@ -106,7 +136,7 @@ int main()
 	{
 	chislo += -pow(chislo,kolichestvo)/kolichestvo;
 	}
-	std::cout<<"y = " << chislo << std::endl;
+	std::cout<<"y = " << chislo << std::endl; file<<"y = " << chislo << std::endl;
 
 	//Задание 3с.
 	kolichestvo = 0;
@@ -116,7 +146,7 @@ int main()
 	{
 	chislo += 1/chislo*kolichestvo;
 	}
-	std::cout<<"y = " << chislo << std::endl;
+	std::cout<<"y = " << chislo << std::endl; file<<"y = " << chislo << std::endl;
 
 	std::getchar();
 	std::getchar();

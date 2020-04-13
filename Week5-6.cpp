@@ -1,7 +1,15 @@
 #include <iostream>
 #include <math.h>
+#include <fstream>
+
+using namespace std;
+
 int main()
 {
+	std::fstream file; // создаем объект класса ifstream
+	file.open("Week5-6.txt",std::ios::out); // открываем файл
+	//file<<""<<std::endl;
+
 	int arr[10]; //Массив
 	int Exercise2i = 0; //Сумма меньше 4
 	int Exercise2c = 0; //Сумма больше 3
@@ -32,7 +40,12 @@ int main()
 
 	}
 	std::cout << Kollichestvo << std::endl;
-
+	file<<"Exercise2i "<<Exercise2i<<std::endl;
+	file<<"Exercise2c "<<Exercise2c<<std::endl;
+	file<<"Zadanie6 "<<"Max_index "<<Exercise6indexmax<<" Min_index "<<Exercise6indexmin<<::endl;
+	file<<"Zadanie5 "<<"Max "<<Exercise5max<<" index "<<Exercise5indexmax<<" Min "<<Exercise5min<<" index "<<Exercise5indexmin<<::endl;
+	file<<"Zadanie10 "<<Kollichestvo<<std::endl;
+	file<<"Zadanie14 "<<Exercise14<<std::endl;
 
 	std::getchar();
 	std::getchar();

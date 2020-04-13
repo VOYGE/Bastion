@@ -1,0 +1,6 @@
+Exercise2i 3
+Exercise2c 44
+Zadanie6 Max_index 4 Min_index 3
+Zadanie5 Max 9 index 4 Min 0 index 3
+Zadanie10 8
+Zadanie14 16
